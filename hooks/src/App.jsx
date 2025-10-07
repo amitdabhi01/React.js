@@ -1,9 +1,11 @@
 import UseState from "./UseState";
+import ObjectUseState from "./ObjectUseState"
 
 const App = () => {
   return(
     <>
-      <UseState></UseState>
+      {/* <UseState></UseState> */}
+      <ObjectUseState></ObjectUseState>
     </>
   )
 }
