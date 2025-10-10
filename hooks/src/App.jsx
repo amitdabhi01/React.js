@@ -8,6 +8,7 @@ import OnClick from "./assets/events/Onclick";
 import OnChange from "./assets/events/Onchange";
 import OnSubmit from "./assets/events/OnSubmit";
 import PassingArgument from "./assets/events/PassingArgument";
+import Conditional from "./assets/events/Conditional";
 
 const App = () => {
 
@@ -40,7 +41,7 @@ const App = () => {
       {/* <input type="text" value={input} placeholder="Enter Name" onChange={(e) => setInput(e.target.value)}/>
       <PassingArgument name={input}></PassingArgument> */}
 
-      <></>
+      <Conditional></Conditional>
     </>
   )
 }
