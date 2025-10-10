@@ -1,13 +1,46 @@
+import { useState } from "react";
+
 import UseState from "./UseState";
 import ObjectUseState from "./ObjectUseState"
 import LifeCycle from "./LifeCycle"
+import UseEffect from "./UseEffect";
+import OnClick from "./assets/events/Onclick";
+import OnChange from "./assets/events/Onchange";
+import OnSubmit from "./assets/events/OnSubmit";
+import PassingArgument from "./assets/events/PassingArgument";
 
 const App = () => {
+
+  // const [input, setInput] = useState("");
+
   return(
     <>
       {/* <UseState></UseState> */}
+
       {/* <ObjectUseState></ObjectUseState> */}
-      <LifeCycle></LifeCycle>
+
+      {/* <LifeCycle></LifeCycle> */}
+
+      {/* <button onClick={() => setShow((prev) => !prev)}>
+        {show ? "hide" : "show"}{" "}
+      </button> */}
+      {/* {show && <LifeCycle />} */}
+
+      {/* <UseEffect></UseEffect> */}
+
+      {/* <event></event> */}
+
+      {/* <OnClick></OnClick> */}
+
+      {/* <OnChange></OnChange> */}
+
+      {/* <><OnSubmit></OnSubmit></> */}
+
+      {/* passing argument in event using props  */}
+      {/* <input type="text" value={input} placeholder="Enter Name" onChange={(e) => setInput(e.target.value)}/>
+      <PassingArgument name={input}></PassingArgument> */}
+
+      <></>
     </>
   )
 }
