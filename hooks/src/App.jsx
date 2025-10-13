@@ -9,6 +9,9 @@ import OnChange from "./assets/events/Onchange";
 import OnSubmit from "./assets/events/OnSubmit";
 import PassingArgument from "./assets/events/PassingArgument";
 import Conditional from "./assets/events/Conditional";
+import List from "./assets/lists/List"
+import ObjectList from "./assets/lists/ObjectList";
+import Focus from "./assets/ref/Focus";
 
 const App = () => {
 
@@ -41,7 +44,13 @@ const App = () => {
       {/* <input type="text" value={input} placeholder="Enter Name" onChange={(e) => setInput(e.target.value)}/>
       <PassingArgument name={input}></PassingArgument> */}
 
-      <Conditional></Conditional>
+      {/* <Conditional></Conditional>*/}
+
+      {/* <List></List> */}
+
+      {/* <ObjectList></ObjectList> */}
+
+      <Focus></Focus>
     </>
   )
 }
