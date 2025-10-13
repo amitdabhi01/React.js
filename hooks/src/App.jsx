@@ -50,7 +50,7 @@ const App = () => {
 
       {/* <ObjectList></ObjectList> */}
 
-      <Focus></Focus>
+      {/* <Focus></Focus> */}
     </>
   )
 }
