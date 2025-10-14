@@ -13,6 +13,7 @@ import List from "./assets/lists/List"
 import ObjectList from "./assets/lists/ObjectList";
 import Focus from "./assets/ref/Focus";
 import Controlled from "./assets/forms/controlled";
+import Uncontrolled from "./assets/forms/Uncontrolled";
 
 const App = () => {
 
@@ -53,7 +54,9 @@ const App = () => {
 
       {/* <Focus></Focus> */}
 
-      <Controlled></Controlled>
+      {/* <Controlled></Controlled> */}
+
+      <Uncontrolled></Uncontrolled>
     </>
   )
 }
