@@ -12,6 +12,7 @@ import Conditional from "./assets/events/Conditional";
 import List from "./assets/lists/List"
 import ObjectList from "./assets/lists/ObjectList";
 import Focus from "./assets/ref/Focus";
+import Controlled from "./assets/forms/controlled";
 
 const App = () => {
 
@@ -51,6 +52,8 @@ const App = () => {
       {/* <ObjectList></ObjectList> */}
 
       {/* <Focus></Focus> */}
+
+      <Controlled></Controlled>
     </>
   )
 }
