@@ -14,51 +14,49 @@ import ObjectList from "./assets/lists/ObjectList";
 import Focus from "./assets/ref/Focus";
 import Controlled from "./assets/forms/controlled";
 import Uncontrolled from "./assets/forms/Uncontrolled";
+import WorkingWithForms from "./assets/forms/WorkingWithForms";
 
-const App = () => {
+const App = () => /* const [input, setInput] = useState("");*/ (
+  <>
+    {/* <UseState></UseState> */}
 
-  // const [input, setInput] = useState("");
+    {/* <ObjectUseState></ObjectUseState> */}
 
-  return(
-    <>
-      {/* <UseState></UseState> */}
+    {/* <LifeCycle></LifeCycle> */}
 
-      {/* <ObjectUseState></ObjectUseState> */}
+    {/* <button onClick={() => setShow((prev) => !prev)}>
+          {show ? "hide" : "show"}{" "}
+        </button> */}
+    {/* {show && <LifeCycle />} */}
 
-      {/* <LifeCycle></LifeCycle> */}
+    {/* <UseEffect></UseEffect> */}
 
-      {/* <button onClick={() => setShow((prev) => !prev)}>
-        {show ? "hide" : "show"}{" "}
-      </button> */}
-      {/* {show && <LifeCycle />} */}
+    {/* <event></event> */}
 
-      {/* <UseEffect></UseEffect> */}
+    {/* <OnClick></OnClick> */}
 
-      {/* <event></event> */}
+    {/* <OnChange></OnChange> */}
 
-      {/* <OnClick></OnClick> */}
+    {/* <><OnSubmit></OnSubmit></> */}
 
-      {/* <OnChange></OnChange> */}
+    {/* passing argument in event using props  */}
+    {/* <input type="text" value={input} placeholder="Enter Name" onChange={(e) => setInput(e.target.value)}/>
+        <PassingArgument name={input}></PassingArgument> */}
 
-      {/* <><OnSubmit></OnSubmit></> */}
+    {/* <Conditional></Conditional>*/}
 
-      {/* passing argument in event using props  */}
-      {/* <input type="text" value={input} placeholder="Enter Name" onChange={(e) => setInput(e.target.value)}/>
-      <PassingArgument name={input}></PassingArgument> */}
+    {/* <List></List> */}
 
-      {/* <Conditional></Conditional>*/}
+    {/* <ObjectList></ObjectList> */}
 
-      {/* <List></List> */}
+    {/* <Focus></Focus> */}
 
-      {/* <ObjectList></ObjectList> */}
+    {/* <Controlled></Controlled> */}
 
-      {/* <Focus></Focus> */}
+    {/* <Uncontrolled></Uncontrolled> */}
 
-      {/* <Controlled></Controlled> */}
-
-      <Uncontrolled></Uncontrolled>
-    </>
-  )
-}
+    <WorkingWithForms></WorkingWithForms>
+  </>
+)
 
 export default App;
