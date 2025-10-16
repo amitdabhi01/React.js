@@ -1,20 +1,21 @@
 import { useState } from "react";
 
-import UseState from "./UseState";
-import ObjectUseState from "./ObjectUseState"
-import LifeCycle from "./LifeCycle"
-import UseEffect from "./UseEffect";
-import OnClick from "./assets/events/Onclick";
-import OnChange from "./assets/events/Onchange";
-import OnSubmit from "./assets/events/OnSubmit";
-import PassingArgument from "./assets/events/PassingArgument";
-import Conditional from "./assets/events/Conditional";
-import List from "./assets/lists/List"
-import ObjectList from "./assets/lists/ObjectList";
-import Focus from "./assets/ref/Focus";
-import Controlled from "./assets/forms/controlled";
-import Uncontrolled from "./assets/forms/Uncontrolled";
-import WorkingWithForms from "./assets/forms/WorkingWithForms";
+import UseState from "./useState/UseState";
+import ObjectUseState from "./useState/ObjectUseState"
+import LifeCycle from "./useState/LifeCycle"
+import UseEffect from "./useState/UseEffect";
+import OnClick from "./events/Onclick";
+import OnChange from "./events/Onchange";
+import OnSubmit from "./events/OnSubmit";
+import PassingArgument from "./events/PassingArgument";
+import Conditional from "./events/Conditional";
+import List from "./lists/List"
+import ObjectList from "./lists/ObjectList";
+import Focus from "./ref/Focus";
+import Controlled from "./forms/controlled";
+import Uncontrolled from "./forms/Uncontrolled";
+import WorkingWithForms from "./forms/WorkingWithForms";
+import Validation from "./forms/Validation";
 
 const App = () => /* const [input, setInput] = useState("");*/ (
   <>
@@ -55,7 +56,9 @@ const App = () => /* const [input, setInput] = useState("");*/ (
 
     {/* <Uncontrolled></Uncontrolled> */}
 
-    <WorkingWithForms></WorkingWithForms>
+    {/* <WorkingWithForms></WorkingWithForms> */}
+
+    <Validation></Validation>
   </>
 )
 
