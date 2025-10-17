@@ -16,6 +16,7 @@ import Controlled from "./forms/controlled";
 import Uncontrolled from "./forms/Uncontrolled";
 import WorkingWithForms from "./forms/WorkingWithForms";
 import Validation from "./forms/Validation";
+import FormikForm from "./forms/FormikForm";
 
 const App = () => /* const [input, setInput] = useState("");*/ (
   <>
@@ -58,7 +59,9 @@ const App = () => /* const [input, setInput] = useState("");*/ (
 
     {/* <WorkingWithForms></WorkingWithForms> */}
 
-    <Validation></Validation>
+    {/* <Validation></Validation> */}
+
+    <FormikForm></FormikForm>
   </>
 )
 
