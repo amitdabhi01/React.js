@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -31,7 +32,7 @@ const ExpenseForm = () => {
 
   return (
     <>
-      <Container className="mt-3 border p-3">
+      <Container className="mt-3 border p-3 mb-5">
         <Form onSubmit={handleSubmit}>
           <Row>
             <Col md={6}>
@@ -50,7 +51,7 @@ const ExpenseForm = () => {
                 />
               </Form.Group>
               <Form.Group
-                className="mb-3"
+                className="mb-4"
                 controlId="exampleForm.ControlInput2"
               >
                 <Form.Label className="text-white">Amount</Form.Label>
@@ -77,7 +78,7 @@ const ExpenseForm = () => {
                 />
               </Form.Group>
               <Form.Group
-                className="mb-3"
+                className="mb-4"
                 controlId="exampleForm.ControlInput4"
               >
                 <span className="text-white me-2">Debit</span>
@@ -90,7 +91,7 @@ const ExpenseForm = () => {
                 />
               </Form.Group>
               <Form.Group
-                className="mb-3"
+                className="mb-4"
                 controlId="exampleForm.ControlInput5"
               >
                 <span className="text-white me-2">Category</span>
