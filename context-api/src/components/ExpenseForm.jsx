@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { expense } from "./ExpenseContext";
 
 import Container from "react-bootstrap/Container";
@@ -78,9 +78,9 @@ const ExpenseForm = () => {
                 <input
                   id="credit"
                   type="radio"
-                  onChange={(e) => handleInput("credit", e)}
-                  value={"credit"}
-                  name="credit"
+                  onChange={(e) => handleInput("type", e)}
+                  value="credit"
+                  name="type"
                   checked={input.type === "credit"}
                 />
               </Form.Group>
@@ -92,9 +92,9 @@ const ExpenseForm = () => {
                 <input
                   type="radio"
                   id="debit"
-                  onChange={(e) => handleInput("debit", e)}
-                  value={"debit"}
-                  name="debit"
+                  onChange={(e) => handleInput("type", e)}
+                  value="debit"
+                  name="type"
                   checked={input.type === "debit"}
                 />
               </Form.Group>

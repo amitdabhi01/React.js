@@ -22,6 +22,8 @@ const ExpenseContext = ({ children }) => {
 
   const [data, setData] = useState(initialState);
 
+  const [editValue, setEditValue] = useState(null);
+
   console.log("data", data);
 
   const add = (input) => {
@@ -54,8 +56,14 @@ const ExpenseContext = ({ children }) => {
     }
   };
   console.log("data", data);
+  
+  const value = {
+    add,
+    list: data,
+    editValue,
+  }
 
-  return <></>;
+  return <expense.Provider value={value}> {children} </expense.Provider>;
 };
 
 export default ExpenseContext;

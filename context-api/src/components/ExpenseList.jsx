@@ -23,7 +23,7 @@ const ExpenseList = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((l) => {
+            {list.map((l) => {
                 return(
                   <tr key={l.id}>
                       <td>{l.title}</td>
@@ -31,10 +31,10 @@ const ExpenseList = () => {
                       <td>{l.type}</td>
                       <td>{l.category}</td>
                       <td>
-                        <button>Edit</button>
+                        <button onClick={() => update(l.id)}>Edit</button>
                       </td>
                       <td>
-                        <button>Delete</button>
+                        <button onClick={() => deleteData(l.id)}>Delete</button>
                       </td>
                   </tr>
                 )
