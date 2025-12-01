@@ -7,6 +7,9 @@ export const expense = createContext({
   update: () => {},
   deleteData: () => {},
   editValue: null,
+  balance: 0,
+  credit: 0,
+  debit: 0,
 });
 
 const ExpenseContext = ({ children }) => {
@@ -27,7 +30,7 @@ const ExpenseContext = ({ children }) => {
   console.log("data", data);
 
   const add = (input) => {
-    if (!input.title || input.amount || input.type || input.category) {
+    if (!input.title || !input.amount || !input.type || !input.category) {
       alert("please fill all the data required");
     } else if (editValue) {
       setData((prev) =>
@@ -55,12 +58,61 @@ const ExpenseContext = ({ children }) => {
       setData((prev) => [...prev, newData]);
     }
   };
+
   console.log("data", data);
+
+
+  const update  = (id) => {
+    console.log("id" ,id);
+
+    const updateVal = data.find((d) => d.id === id);
+
+    console.log("update", updateVal)
+
+    setEditValue(updateVal)
+  }
+
+
+  const deleteData = (id) => {
+    const remainData = data.filter((d) => d.id !== id)
+
+    setData(remainData);
+  }
+
+
+  const debit = data
+  .filter((d) => d.type === "debit")
+  .reduce((acc, curr) => {
+    acc += Number(curr.amount);
+    return acc;
+  },0);
+
+
+  const credit = data
+  .filter((d) => d.type === "credit")
+  .reduce((acc, curr) => {
+    acc += Number(curr.amount);
+    return acc;
+  },0)
+
+  
+  const balance = credit - debit;
+
+  console.log("debit" , debit);
+
+  console.log("credit" , credit);
+
+  console.log("balance", balance);
   
   const value = {
     add,
     list: data,
+    update,
     editValue,
+    deleteData,
+    credit,
+    debit,
+    balance,
   }
 
   return <expense.Provider value={value}> {children} </expense.Provider>;

@@ -9,12 +9,12 @@ const ExpenseList = () => {
 
   return (
     <>
-      <Container>
+      <Container className="border p-5 rounded-5">
         <h1 className="text-center text-white mb-3">Expense Data</h1>
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Id</th>
+              {/* <th>Id</th> */}
               <th>Title</th>
               <th>Amount</th>
               <th>Type</th>
@@ -30,12 +30,11 @@ const ExpenseList = () => {
                       <td>{l.amount}</td>
                       <td>{l.type}</td>
                       <td>{l.category}</td>
-                      <td>
-                        <button onClick={() => update(l.id)}>Edit</button>
+                      <td className="text-center">
+                        <button onClick={() => update(l.id)} className="me-3 btn btn-warning">Edit</button>
+                        <button onClick={() => deleteData(l.id)} className="btn btn-danger">Delete</button>
                       </td>
-                      <td>
-                        <button onClick={() => deleteData(l.id)}>Delete</button>
-                      </td>
+                        
                   </tr>
                 )
             })}

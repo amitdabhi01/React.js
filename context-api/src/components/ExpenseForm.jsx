@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { expense } from "./ExpenseContext";
+import ExpenseData from "./ExpenseData";
 
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -33,14 +34,16 @@ const ExpenseForm = () => {
     e.preventDefault();
     add(input);
     setInput({ title: "", amount: "", type: "", category: "" });
-    // console.log(input);
   };
+
+  console.log(input);
 
   return (
     <>
-      <Container className="mt-3 border p-3 mb-5">
+      <h1 className="text-center text-white mb-4 mt-4">Expense Tracker</h1>
+      <Container className="mt-3 border p-5 mb-5 rounded-5">
         <Form onSubmit={handleSubmit}>
-          <Row>
+          <Row className="justify-content-center align-items-center">
             <Col md={6}>
               <Form.Group
                 className="mb-3"
@@ -117,7 +120,10 @@ const ExpenseForm = () => {
                   <option value="shopping">Shopping</option>
                 </select>
               </Form.Group>
-              <button className="px-5 rounded py-2" type="submit">{editValue ? "update" : "add"}</button>
+              <button className="px-5 rounded py-2" variant="light" type="submit">{editValue ? "update" : "add"}</button>
+            </Col>
+            <Col md={6}>
+              <ExpenseData/>
             </Col>
           </Row>
         </Form>
