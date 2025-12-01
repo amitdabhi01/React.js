@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createContext, useState } from "react";
 
 export const expense = createContext({
@@ -23,7 +23,12 @@ const ExpenseContext = ({ children }) => {
     },
   ];
 
-  const [data, setData] = useState(initialState);
+  const [data, setData] = useState(() => {
+
+    const saved = localStorage.getItem("expenses");
+
+    return saved ? JSON.parse(saved) : initialState;
+  });
 
   const [editValue, setEditValue] = useState(null);
 
@@ -58,6 +63,11 @@ const ExpenseContext = ({ children }) => {
       setData((prev) => [...prev, newData]);
     }
   };
+
+
+  useEffect(() => {
+    localStorage.setItem("expenses", JSON.stringify(data))
+  },[data])
 
   console.log("data", data);
 
