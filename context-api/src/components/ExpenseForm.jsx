@@ -120,7 +120,7 @@ const ExpenseForm = () => {
                   <option value="shopping">Shopping</option>
                 </select>
               </Form.Group>
-              <button className="px-5 rounded py-2" variant="light" type="submit">{editValue ? "update" : "add"}</button>
+              <button className="px-5 rounded py-2 btn btn-success w-75" variant="light" type="submit">{editValue ? "Update" : "Add"}</button>
             </Col>
             <Col md={6}>
               <ExpenseData/>

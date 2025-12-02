@@ -94,11 +94,11 @@ const ExpenseList = () => {
           </Col>
           <Col md={3}>
             <Form.Select
-              name="shortedBy"
+              name="sortedBy"
               value={expenseQuery.sortedBy}
-              onChange={(e) => handleQuery("shortedBy", e)}
+              onChange={(e) => handleQuery("sortedBy", e)}
             >
-              <option>ShortedBy</option>
+              <option>SortedBy</option>
               <option value="latest">Latest</option>
               <option value="oldest">Oldest</option>
               <option value="ascending">Money Ascending</option>
@@ -128,11 +128,11 @@ const ExpenseList = () => {
                   <td>{l.amount}</td>
                   <td>{l.type}</td>
                   <td>{l.category}</td>
-                  <td>
-                    <button onClick={() => update(l.id)}>edit</button>
+                  <td className="text-center">
+                    <button onClick={() => update(l.id)} className="btn btn-warning w-50">Edit</button>
                   </td>
-                  <td>
-                    <button onClick={() => deleteData(l.id)}>delete</button>
+                  <td className="text-center">
+                    <button onClick={() => deleteData(l.id)} className="btn btn-danger w-50">Delete</button>
                   </td>
                 </tr>
               ))
