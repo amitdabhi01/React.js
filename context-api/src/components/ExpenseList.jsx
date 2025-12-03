@@ -107,7 +107,7 @@ const ExpenseList = () => {
           </Col>
         </Row>
 
-        <Table striped bordered hover>
+        <Table striped bordered hover responsive>
           <thead>
             <tr>
               {/* <th>Id</th> */}
@@ -129,10 +129,10 @@ const ExpenseList = () => {
                   <td>{l.type}</td>
                   <td>{l.category}</td>
                   <td className="text-center">
-                    <button onClick={() => update(l.id)} className="btn btn-warning w-50">Edit</button>
+                    <button onClick={() => update(l.id)} className="btn btn-warning">Edit</button>
                   </td>
                   <td className="text-center">
-                    <button onClick={() => deleteData(l.id)} className="btn btn-danger w-50">Delete</button>
+                    <button onClick={() => deleteData(l.id)} className="btn btn-danger">Delete</button>
                   </td>
                 </tr>
               ))
