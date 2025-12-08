@@ -37,7 +37,7 @@ const Quiz = () => {
                 <li key={ans}>
                     <button onClick={() => handleAnswer(ans)}>{ans}</button>
                 </li>
-            ))};
+            ))}
         </ul>
     </>
   )
