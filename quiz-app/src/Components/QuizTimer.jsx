@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const QuizTimer = () => {
+const QuizTimer = ({timer,onTimeOut}) => {
   const [remainTime, setRemainTime] = useState(timer);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const QuizTimer = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-        setRemainTime((prev) => prevTime - 100)
+        setRemainTime((prevTime) => prevTime - 100);
     },100);
 
     return() => {

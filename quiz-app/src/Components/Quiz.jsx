@@ -1,5 +1,6 @@
 import React from 'react'
 import QUESTIONS from "../qns"
+import Question from './Question'    
 import { useState } from 'react'
 
 const Quiz = () => {
