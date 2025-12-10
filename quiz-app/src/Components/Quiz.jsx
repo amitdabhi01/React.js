@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from "react";
 import QUESTIONS from "../qns.js";
 import Question from "./Question.jsx";
+import Result from "./Result.jsx";
 
 const Quiz = () => {
   // const [activeIndex,setActiveIndex] = useState(0)
@@ -22,7 +23,7 @@ const Quiz = () => {
   if (quizComplete) {
     return (
       <>
-        <h1>Quiz Completed</h1>
+        <Result userAnswer={userAnswer}/>    
       </>
     );
   }
