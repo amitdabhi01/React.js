@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import QuizTimer from "./QuizTimer.jsx";
 import Answer from "./Answer.jsx";
-import QUESTIONS from "../../qns.js";
+import QUESTIONS from "../qns.js";
 
 const Question = ({
   onSkip,

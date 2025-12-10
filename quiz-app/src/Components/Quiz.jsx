@@ -1,47 +1,50 @@
-import React from 'react'
-import QUESTIONS from "../qns"
-import Question from './Question'    
-import { useState } from 'react'
+import React, { useCallback, useState } from "react";
+import QUESTIONS from "../qns.js";
+import Question from "./Question.jsx";
 
 const Quiz = () => {
+  // const [activeIndex,setActiveIndex] = useState(0)
 
-    const [userAnswer, setUserAnswer] = useState([])
+  const [userAnswer, setUserAnswer] = useState([]);
 
-    const qnsIndex = userAnswer.length;
+  const qnsIndex = userAnswer.length
+  
 
-    const handleAnswer = (ans) => {
-        setUserAnswer((prevAnswer) => [...prevAnswer,ans])
-    }
+  const handleAnswer = useCallback((ans) => {
+    setUserAnswer((prevAnswer) => [...prevAnswer, ans]);
 
-    const quizComplete = qnsIndex === QUESTIONS.length
+ 
+  }, []);
 
-    if (quizComplete) {
-        return(
-            <>
-                <h1>Quiz Complete</h1>
-            </>
-        )
-    }
 
-    const shuffledOption = [...QUESTIONS[qnsIndex].option]
+  const quizComplete = qnsIndex === QUESTIONS.length;
 
-    shuffledOption.sort(() => Math.random()-0.5)
+  if (quizComplete) {
+    return (
+      <>
+        <h1>Quiz Completed</h1>
+      </>
+    );
+  }
 
-    console.log("user answer", userAnswer)
+  console.log("user answer", userAnswer);
+
+  const handleSkip = useCallback(() => handleAnswer(null), [handleAnswer]);
 
   return (
     <>
-        <h1>{QUESTIONS[qnsIndex].qns}</h1>
-
-        <ul>
-            {shuffledOption.map((ans) =>(
-                <li key={ans}>
-                    <button onClick={() => handleAnswer(ans)}>{ans}</button>
-                </li>
-            ))}
-        </ul>
+      <Question
+      key={qnsIndex}
+      index={qnsIndex}
+        onSkip={handleSkip}
+        // qns={[QUESTIONS[qnsIndex].qns]}
+        // selected={userAnswer[userAnswer.length - 1]}
+        // answerState={answerState}
+        handleAnswer={handleAnswer}
+        // answer={[...QUESTIONS[qnsIndex].option]}
+      />
     </>
-  )
-}
+  );
+};
 
-export default Quiz
+export default Quiz;
