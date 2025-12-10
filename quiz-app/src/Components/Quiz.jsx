@@ -17,6 +17,7 @@ const Quiz = () => {
  
   }, []);
 
+  const handleSkip = useCallback(() => handleAnswer(null), [handleAnswer]);
 
   const quizComplete = qnsIndex === QUESTIONS.length;
 
@@ -30,7 +31,7 @@ const Quiz = () => {
 
   console.log("user answer", userAnswer);
 
-  const handleSkip = useCallback(() => handleAnswer(null), [handleAnswer]);
+  
 
   return (
     <>
