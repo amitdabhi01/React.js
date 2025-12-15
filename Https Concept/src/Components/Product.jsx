@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
+// import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
+import Loading from "./Loading";
 
 const Product = () => {
   const [product, setProduct] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+
+  const [error, setError] = useState("");
 
   // useEffect(() => {
   //   const productData = async () => {
@@ -28,15 +33,41 @@ const Product = () => {
   useEffect(() => {
     const productData = async () => {
       try {
+        setLoading(true);
+
         const res = await axios("http://localhost:5000/products");
 
         const data = res.data;
+
+        if (data.length <= 0) {
+          setError("no data found");
+        }
+
+        setProduct(data);
       } catch (error) {
-        
+        console.log(error);
+
+        if (error.status === 404) {
+          setError("invalid url");
+        } else {
+          setError(error.message);
+        }
+      } finally {
+        setLoading(false);
       }
-    }
+    };
+
+    productData();
   }, []);
-  
+
+  if (loading) {
+    <Loading />;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
     <>
       <Container className="py-4">
