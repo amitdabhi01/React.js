@@ -1,13 +1,12 @@
-
 {
-  "products":[
+  "products": [
   {
     "id": 1,
     "name": "Wireless Bluetooth Headphones",
     "category": "Electronics",
     "price": 2499,
     "description": "High-quality wireless headphones with deep bass and long battery life.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/3394656/pexels-photo-3394656.jpeg"
   },
   {
     "id": 2,
@@ -15,7 +14,7 @@
     "category": "Electronics",
     "price": 18999,
     "description": "A powerful smartphone with a stunning display and fast performance.",
-    "image": "https://images.pexels.com/photos/4123561/pexels-photo-4123561.jpeg"
+    "image": "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg"
   },
   {
     "id": 3,
@@ -23,7 +22,7 @@
     "category": "Electronics",
     "price": 45999,
     "description": "Lightweight and high-speed laptop ideal for work and gaming.",
-    "image": "https://images.pexels.com/photos/4073705/pexels-photo-4073705.jpeg"
+    "image": "https://images.pexels.com/photos/18105/pexels-photo.jpg"
   },
   {
     "id": 4,
@@ -31,7 +30,7 @@
     "category": "Wearables",
     "price": 3499,
     "description": "Track fitness, calls, and notifications right on your wrist.",
-    "image": "https://images.pexels.com/photos/16247545/pexels-photo-16247545.jpeg"
+    "image": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg"
   },
   {
     "id": 5,
@@ -39,7 +38,7 @@
     "category": "Electronics",
     "price": 15999,
     "description": "Portable tablet perfect for entertainment and productivity.",
-    "image": "https://images.pexels.com/photos/9379075/pexels-photo-9379075.jpeg"
+    "image": "https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg"
   },
   {
     "id": 6,
@@ -47,7 +46,7 @@
     "category": "Audio",
     "price": 1999,
     "description": "Compact speaker with loud, crystal-clear sound.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/63703/pexels-photo-63703.jpeg"
   },
   {
     "id": 7,
@@ -55,7 +54,7 @@
     "category": "Gaming",
     "price": 29999,
     "description": "Next-gen gaming console with ultra-fast loading and 4K support.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg"
   },
   {
     "id": 8,
@@ -63,7 +62,7 @@
     "category": "Photography",
     "price": 25999,
     "description": "Capture stunning photos and videos with high resolution.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg"
   },
   {
     "id": 9,
@@ -71,7 +70,7 @@
     "category": "Accessories",
     "price": 499,
     "description": "Smooth and responsive wireless mouse for everyday use.",
-    "image": "https://images.pexels.com/photos/9379075/pexels-photo-9379075.jpeg"
+    "image": "https://images.pexels.com/photos/2115257/pexels-photo-2115257.jpeg"
   },
   {
     "id": 10,
@@ -79,7 +78,7 @@
     "category": "Accessories",
     "price": 799,
     "description": "Durable keyboard with quiet keys and comfortable typing feel.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/5082568/pexels-photo-5082568.jpeg"
   },
   {
     "id": 11,
@@ -87,7 +86,7 @@
     "category": "Storage",
     "price": 3499,
     "description": "Reliable portable storage for files, videos, and backups.",
-    "image": "https://images.pexels.com/photos/9379075/pexels-photo-9379075.jpeg"
+    "image": "https://images.pexels.com/photos/2644597/pexels-photo-2644597.jpeg"
   },
   {
     "id": 12,
@@ -95,7 +94,7 @@
     "category": "Storage",
     "price": 399,
     "description": "Fast and compact USB drive for quick data transfer.",
-    "image": "https://images.pexels.com/photos/9379075/pexels-photo-9379075.jpeg"
+    "image": "https://images.pexels.com/photos/5882580/pexels-photo-5882580.jpeg"
   },
   {
     "id": 13,
@@ -103,7 +102,7 @@
     "category": "Home Tech",
     "price": 4999,
     "description": "Control home temperature remotely with smart automation.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/4792495/pexels-photo-4792495.jpeg"
   },
   {
     "id": 14,
@@ -111,7 +110,7 @@
     "category": "Wearables",
     "price": 2599,
     "description": "Monitor heart rate, steps, and workout performance.",
-    "image": "https://images.pexels.com/photos/16247545/pexels-photo-16247545.jpeg"
+    "image": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg"
   },
   {
     "id": 15,
@@ -119,7 +118,7 @@
     "category": "Gaming",
     "price": 32999,
     "description": "Immersive virtual reality experience with high clarity.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
   },
   {
     "id": 16,
@@ -127,7 +126,7 @@
     "category": "Electronics",
     "price": 8999,
     "description": "Project movies and presentations anywhere on the go.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/799137/pexels-photo-799137.jpeg"
   },
   {
     "id": 17,
@@ -135,7 +134,7 @@
     "category": "Audio",
     "price": 1499,
     "description": "Lightweight earbuds with clear sound and deep bass.",
-    "image": "https://images.pexels.com/photos/4123561/pexels-photo-4123561.jpeg"
+    "image": "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg"
   },
   {
     "id": 18,
@@ -143,7 +142,7 @@
     "category": "Furniture",
     "price": 7999,
     "description": "Ergonomic gaming chair with adjustable height and comfort.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/7862503/pexels-photo-7862503.jpeg"
   },
   {
     "id": 19,
@@ -151,7 +150,7 @@
     "category": "Home",
     "price": 899,
     "description": "Stylish LED desk lamp ideal for work and study.",
-    "image": "https://images.pexels.com/photos/9379075/pexels-photo-9379075.jpeg"
+    "image": "https://images.pexels.com/photos/112811/pexels-photo-112811.jpeg"
   },
   {
     "id": 20,
@@ -159,7 +158,7 @@
     "category": "Kitchen",
     "price": 2499,
     "description": "Brew delicious coffee quickly with this modern coffee maker.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/585753/pexels-photo-585753.jpeg"
   },
   {
     "id": 21,
@@ -167,7 +166,7 @@
     "category": "Accessories",
     "price": 699,
     "description": "Fast wireless charging for all compatible devices.",
-    "image": "https://images.pexels.com/photos/9379075/pexels-photo-9379075.jpeg"
+    "image": "https://images.pexels.com/photos/4526407/pexels-photo-4526407.jpeg"
   },
   {
     "id": 22,
@@ -175,7 +174,7 @@
     "category": "Photography",
     "price": 10999,
     "description": "Compact action camera for capturing adventures in HD.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg"
   },
   {
     "id": 23,
@@ -183,7 +182,7 @@
     "category": "Home Tech",
     "price": 499,
     "description": "Energy-saving bulb with app and voice control support.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg"
   },
   {
     "id": 24,
@@ -191,7 +190,7 @@
     "category": "Audio",
     "price": 3999,
     "description": "Experience distraction-free sound with noise cancellation.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg"
   },
   {
     "id": 25,
@@ -199,7 +198,7 @@
     "category": "Accessories",
     "price": 1299,
     "description": "Durable & waterproof backpack with extra laptop padding.",
-    "image": "https://images.pexels.com/photos/9379075/pexels-photo-9379075.jpeg"
+    "image": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg"
   },
   {
     "id": 26,
@@ -207,7 +206,7 @@
     "category": "Accessories",
     "price": 999,
     "description": "Slim wireless keyboard with long battery backup.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/5082577/pexels-photo-5082577.jpeg"
   },
   {
     "id": 27,
@@ -215,7 +214,7 @@
     "category": "Accessories",
     "price": 1199,
     "description": "High-capacity power bank to charge devices on the go.",
-    "image": "https://images.pexels.com/photos/4123561/pexels-photo-4123561.jpeg"
+    "image": "https://images.pexels.com/photos/4526427/pexels-photo-4526427.jpeg"
   },
   {
     "id": 28,
@@ -223,7 +222,7 @@
     "category": "Home Tech",
     "price": 5999,
     "description": "Smart doorbell with camera and mobile notifications.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/7061662/pexels-photo-7061662.jpeg"
   },
   {
     "id": 29,
@@ -231,7 +230,7 @@
     "category": "Personal Care",
     "price": 999,
     "description": "Automatic toothbrush with soft bristles and long battery.",
-    "image": "https://images.pexels.com/photos/705164/pexels-photo-705164.jpeg"
+    "image": "https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg"
   },
   {
     "id": 30,
@@ -239,7 +238,7 @@
     "category": "Wearables",
     "price": 1499,
     "description": "Stylish digital watch with multiple smart features.",
-    "image": "https://images.pexels.com/photos/16247545/pexels-photo-16247545.jpeg"
+    "image": "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg"
   }
 ]
 }

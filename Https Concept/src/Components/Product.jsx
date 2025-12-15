@@ -2,41 +2,65 @@ import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from 'react-bootstrap/Image';
+import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import axios from "axios";
 
 const Product = () => {
   const [product, setProduct] = useState([]);
 
+  // useEffect(() => {
+  //   const productData = async () => {
+  //     try {
+  //       const res = await fetch("http://localhost:5000/products");
+
+  //       const data = await res.json();
+
+  //       setProduct(data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   productData();
+  // }, []);
+
   useEffect(() => {
     const productData = async () => {
       try {
-        const res = await fetch("http://localhost:5000/products");
+        const res = await axios("http://localhost:5000/products");
 
-        const data = await res.json();
-
-        setProduct(data);
+        const data = res.data;
       } catch (error) {
-        console.log(error);
+        
       }
-    };
-    productData();
+    }
   }, []);
+  
   return (
     <>
       <Container className="py-4">
-        <h1 className="text-center">Product</h1>
+        <h1 className="text-center pb-3">Product</h1>
         <Row className="g-4">
-            {product.map((prod) => (
-                <>
-                    <Col md={3} className="text-center">
-                        <Image src={prod.image} className="w-100" style={{height:"300px", objectFit:"cover"}}></Image>
-                        <p>Product Name: {prod.name}</p>
-                        <p>Product Category: {prod.category}</p>
-                        <p>Product Price: {prod.price} $</p>
-                        <p>Product Description: {prod.description}</p>
-                    </Col>
-                </>
-            ))}
+          {product.map((prod) => (
+            <>
+              <Col md={3} className="text-center">
+                <Card>
+                  <Card.Img
+                    variant="top"
+                    src={prod.image}
+                    style={{ height: "300px", objectFit: "cover" }}
+                  />
+                  <Card.Body>
+                    <Card.Title>{prod.name}</Card.Title>
+                    <Card.Text>{prod.description}</Card.Text>
+                    <Card.Text>₹ {prod.price}</Card.Text>
+                    <Button variant="primary">Add To Cart</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </>
+          ))}
         </Row>
       </Container>
     </>
