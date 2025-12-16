@@ -1,12 +1,14 @@
-import React from 'react';
-import Product from './Components/Product';
+import React from "react";
+import Product from "./Components/Product";
+import Navbar from "./Components/Navbar";
 
 const App = () => {
   return (
     <>
-      <Product/>
+      <Navbar />
+      <Product />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

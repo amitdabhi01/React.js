@@ -15,6 +15,8 @@ const Product = () => {
 
   const [error, setError] = useState("");
 
+  const [cart, setCart] = useState([]);
+
   // useEffect(() => {
   //   const productData = async () => {
   //     try {
@@ -68,33 +70,41 @@ const Product = () => {
     return <p>{error}</p>;
   }
 
+  const handleCart = (prod) => {
+    const similarData = cart.find((item) => cart.id === prod.id);
+
+    if (similarData) {
+      setCart((prevItem) => )
+    }
+  };
+
   return (
-    <>
-      <Container className="py-4">
-        <h1 className="text-center pb-3">Product</h1>
-        <Row className="g-4">
-          {product.map((prod) => (
-            <>
-              <Col md={3} className="text-center">
-                <Card>
-                  <Card.Img
-                    variant="top"
-                    src={prod.image}
-                    style={{ height: "300px", objectFit: "cover" }}
-                  />
-                  <Card.Body>
-                    <Card.Title>{prod.name}</Card.Title>
-                    <Card.Text>{prod.description}</Card.Text>
-                    <Card.Text>₹ {prod.price}</Card.Text>
-                    <Button variant="primary">Add To Cart</Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </>
-          ))}
-        </Row>
-      </Container>
-    </>
+    <Container className="py-4">
+      <h1 className="text-center pb-3">Product</h1>
+      <Row className="g-4">
+        {product.map((prod) => (
+          <>
+            <Col md={3} className="text-center">
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src={prod.image}
+                  style={{ height: "300px", objectFit: "cover" }}
+                />
+                <Card.Body>
+                  <Card.Title>{prod.name}</Card.Title>
+                  <Card.Text>{prod.description}</Card.Text>
+                  <Card.Text>₹ {prod.price}</Card.Text>
+                  <Button variant="primary" onClick={() => handleCart(prod)}>
+                    Add To Cart
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          </>
+        ))}
+      </Row>
+    </Container>
   );
 };
 
