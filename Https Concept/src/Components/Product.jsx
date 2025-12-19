@@ -21,7 +21,7 @@ const Product = () => {
 
   const [cart, setCart] = useState([]);
 
-  const [showCart, setShowCart] = useState(false)
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     const productData = async () => {
@@ -81,8 +81,16 @@ const Product = () => {
 
   return (
     <>
-      <Navbar cart={cart} onCartClick={() => setShowCart(true)}/>
-      {setShow && <CartModal cart={cart} onHide={onHide} onSHow={onShow}/>} 
+      <Navbar cart={cart} onShow={() => setShowCart(true)} />
+
+      {showCart && (
+        <CartModal
+          onShow={showCart} 
+          onClose={() => setShowCart(false)}
+          cart={cart}
+        />
+      )}
+
       <Container className="py-4">
         <h1 className="text-center pb-3">Product</h1>
         <Row className="g-4">
