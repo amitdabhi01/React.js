@@ -7,7 +7,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 
+import Order from "./Order";
+
 function BasicExample({ cart, onShow }) {
+  const [showOrder, setShowOrder] = useState(false);
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -16,13 +19,17 @@ function BasicExample({ cart, onShow }) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Button onClick={onShow}>
-                Carts <Badge bg="secondary">{cart.length}</Badge>
-              </Button>
+              <div className="d-flex gap-4">
+                <Button onClick={onShow}>
+                  Carts <Badge bg="secondary">{cart.length}</Badge>
+                </Button>
+                <Button onClick={() => setShowOrder(true)}>Your Order</Button>
+              </div>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <Order onHide={() => setShowOrder(false)} onShow={showOrder} />
     </>
   );
 }

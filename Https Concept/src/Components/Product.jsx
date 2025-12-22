@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Container from "react-bootstrap/Container";
@@ -85,9 +85,10 @@ const Product = () => {
 
       {showCart && (
         <CartModal
-          onShow={showCart} 
+          onShow={showCart}
           onClose={() => setShowCart(false)}
           cart={cart}
+          clearCart={() => setCart([])}
         />
       )}
 
@@ -95,25 +96,23 @@ const Product = () => {
         <h1 className="text-center pb-3">Product</h1>
         <Row className="g-4">
           {product.map((prod) => (
-            <>
-              <Col md={3} className="text-center">
-                <Card>
-                  <Card.Img
-                    variant="top"
-                    src={prod.image}
-                    style={{ height: "300px", objectFit: "cover" }}
-                  />
-                  <Card.Body>
-                    <Card.Title>{prod.name}</Card.Title>
-                    <Card.Text>{prod.description}</Card.Text>
-                    <Card.Text>₹ {prod.price}</Card.Text>
-                    <Button variant="primary" onClick={() => handleCart(prod)}>
-                      Add To Cart
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </>
+            <Col md={3} key={prod.id} className="text-center">
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src={prod.image}
+                  style={{ height: "300px", objectFit: "cover" }}
+                />
+                <Card.Body>
+                  <Card.Title>{prod.name}</Card.Title>
+                  <Card.Text>{prod.description}</Card.Text>
+                  <Card.Text>₹ {prod.price}</Card.Text>
+                  <Button variant="primary" onClick={() => handleCart(prod)}>
+                    Add To Cart
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
           ))}
         </Row>
       </Container>

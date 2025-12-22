@@ -1,25 +1,57 @@
+import axios from "axios";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
 
-function CartModal({ onClose, onShow, cart }) {
-
+function CartModal({ onClose, onShow, cart, clearCart }) {
   const totalAmount = cart.reduce((acc, curr) => {
     return (acc += curr.price * curr.quantity);
-  },0)
+  }, 0);
+
+  const handlePlaceOrder = async () => {
+    const orderData = {
+      cart,
+      totalAmount,
+      status: "pending",
+      createdAt: new Date().toISOString(),
+    };
+
+    try {
+      // const res = await fetch("http://localhost:5000/orders", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(orderData),
+      // });
+      // if (!res.ok) {
+      //   throw new Error("failed to place order");
+      // }
+
+      const res = await axios.post("http://localhost:5000/orders", orderData);
+
+      alert("order placed successfully");
+      onClose();
+      clearCart();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <>
-      <Modal Show={onShow} onHide={onClose} size="lg" centered> 
+      <Modal show={onShow} onHide={onClose} size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            Your Carts Data
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {cart.length <= 0 ? (
             <p>Your Cart is Empty</p>
-          ): (
+          ) : (
             <Table>
               <thead>
                 <tr>
@@ -31,11 +63,15 @@ function CartModal({ onClose, onShow, cart }) {
                 </tr>
               </thead>
               <tbody>
-                {cart.map((item, index) =>(
+                {cart.map((item, index) => (
                   <tr key={item.id}>
-                    <td>{index+1}</td>
+                    <td>{index + 1}</td>
                     <td>
-                      <Image src={item.image} alt={item.name}></Image>
+                      <Image
+                        style={{ maxWidth: "100px" }}
+                        src={item.image}
+                        alt={item.name}
+                      ></Image>
                     </td>
                     <td>{item.name}</td>
                     <td>{item.price}</td>
@@ -46,16 +82,14 @@ function CartModal({ onClose, onShow, cart }) {
             </Table>
           )}
         </Modal.Body>
-       {cart.length > 0 ? 
-        <Modal.Footer className="d-flex justify-content-between w-100">
-          <div>
-            <h4>Total Amount: ₹{totalAmount}</h4>
-          </div>
-          <Button onClick={() => handlePlaceOrder()}>
-            Place Order
-          </Button>
-        </Modal.Footer>
-        : null}
+        {cart.length > 0 ? (
+          <Modal.Footer className="d-flex justify-content-between w-100">
+            <div>
+              <h4>Total Amount: ₹{totalAmount}</h4>
+            </div>
+            <Button onClick={() => handlePlaceOrder()}>Place Order</Button>
+          </Modal.Footer>
+        ) : null}
       </Modal>
     </>
   );
