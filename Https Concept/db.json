@@ -243,118 +243,30 @@
   ],
   "orders": [
     {
-      "id": "f851",
+      "id": "2652",
       "cart": [
         {
-          "id": "4",
-          "name": "Smart Watch",
-          "category": "Wearables",
-          "price": 3499,
-          "description": "Track fitness, calls, and notifications right on your wrist.",
-          "image": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg",
-          "quantity": 1
-        },
-        {
-          "id": "3",
-          "name": "Laptop",
-          "category": "Electronics",
-          "price": 45999,
-          "description": "Lightweight and high-speed laptop ideal for work and gaming.",
-          "image": "https://images.pexels.com/photos/18105/pexels-photo.jpg",
-          "quantity": 1
-        }
-      ],
-      "totalAmount": 49498,
-      "status": "completed",
-      "createdAt": "2025-12-22T06:01:23.483Z"
-    },
-    {
-      "id": "f97e",
-      "cart": [
-        {
-          "id": "4",
-          "name": "Smart Watch",
-          "category": "Wearables",
-          "price": 3499,
-          "description": "Track fitness, calls, and notifications right on your wrist.",
-          "image": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg",
-          "quantity": 1
-        },
-        {
-          "id": "3",
-          "name": "Laptop",
-          "category": "Electronics",
-          "price": 45999,
-          "description": "Lightweight and high-speed laptop ideal for work and gaming.",
-          "image": "https://images.pexels.com/photos/18105/pexels-photo.jpg",
-          "quantity": 1
-        }
-      ],
-      "totalAmount": 49498,
-      "status": "completed",
-      "createdAt": "2025-12-22T06:02:44.779Z"
-    },
-    {
-      "id": "e102",
-      "cart": [
-        {
-          "id": "1",
-          "name": "Wireless Bluetooth Headphones",
-          "category": "Electronics",
-          "price": 2499,
-          "description": "High-quality wireless headphones with deep bass and long battery life.",
-          "image": "https://images.pexels.com/photos/3394656/pexels-photo-3394656.jpeg",
-          "quantity": 1
-        },
-        {
-          "id": "3",
-          "name": "Laptop",
-          "category": "Electronics",
-          "price": 45999,
-          "description": "Lightweight and high-speed laptop ideal for work and gaming.",
-          "image": "https://images.pexels.com/photos/18105/pexels-photo.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Gaming Console",
-          "category": "Gaming",
-          "price": 29999,
-          "description": "Next-gen gaming console with ultra-fast loading and 4K support.",
-          "image": "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg",
-          "quantity": 1
-        },
-        {
-          "id": "9",
-          "name": "Wireless Mouse",
-          "category": "Accessories",
+          "id": "23",
+          "name": "Smart Light Bulb",
+          "category": "Home Tech",
           "price": 499,
-          "description": "Smooth and responsive wireless mouse for everyday use.",
-          "image": "https://images.pexels.com/photos/2115257/pexels-photo-2115257.jpeg",
+          "description": "Energy-saving bulb with app and voice control support.",
+          "image": "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg",
           "quantity": 1
         },
         {
-          "id": "11",
-          "name": "External Hard Drive",
-          "category": "Storage",
-          "price": 3499,
-          "description": "Reliable portable storage for files, videos, and backups.",
-          "image": "https://images.pexels.com/photos/2644597/pexels-photo-2644597.jpeg",
-          "quantity": 1
-        },
-        {
-          "id": "19",
-          "name": "Desk Lamp",
-          "category": "Home",
-          "price": 899,
-          "description": "Stylish LED desk lamp ideal for work and study.",
-          "image": "https://images.pexels.com/photos/112811/pexels-photo-112811.jpeg",
+          "id": "24",
+          "name": "Noise Cancelling Headset",
+          "category": "Audio",
+          "price": 3999,
+          "description": "Experience distraction-free sound with noise cancellation.",
+          "image": "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg",
           "quantity": 1
         }
       ],
-      "totalAmount": 83394,
-      "status": "completed",
-      "createdAt": "2025-12-22T06:30:50.134Z"
+      "totalAmount": 4498,
+      "status": "pending",
+      "createdAt": "2025-12-23T09:27:25.112Z"
     }
   ]
 }

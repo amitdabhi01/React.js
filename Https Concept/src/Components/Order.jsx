@@ -53,17 +53,25 @@ const Order = ({ onHide, onShow }) => {
 
   const handleOrderStatus = async (id, status) => {
     try {
-      const res = await axios.patch(`http://localhost:5000/orders/${id}`, {
-        status,
-      });
+      await axios.patch(`http://localhost:5000/orders/${id}`, { status,});
 
       setOrder((prevOrder) =>
-        prevOrder.map((prod) => {
-          prod.id === id ? { ...prod, status: status } : prod;
-        })
+        prevOrder.map((prod) => (prod.id === id ? { ...prod, status } : prod))
       );
 
       alert("order status updated successfully");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/orders/${id}`);
+
+      setOrder((prevOrder) => prevOrder.filter((ord) => ord.id !== id));
+
+      alert("Order deleted successfully");
     } catch (error) {
       console.log(error.message);
     }
@@ -126,7 +134,12 @@ const Order = ({ onHide, onShow }) => {
                       </Button>
                     </td>
                     <td>
-                      <Button variant="danger">Delete</Button>
+                      <Button
+                        variant="danger"
+                        onClick={() => handleDelete(ord.id)}
+                      >
+                        Delete
+                      </Button>
                     </td>
                   </tr>
                 ))}
