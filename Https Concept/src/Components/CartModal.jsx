@@ -1,4 +1,6 @@
 import axios from "axios";
+import useHttp from "../Hooks/http";
+import Loading from "./Loading";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -6,6 +8,10 @@ import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
 
 function CartModal({ onClose, onShow, cart, clearCart }) {
+  const url = "http://localhost:5000/orders";
+
+  const { sendRequest, loading } = useHttp({ url, method: "POST" });
+
   const totalAmount = cart.reduce((acc, curr) => {
     return (acc += curr.price * curr.quantity);
   }, 0);
@@ -30,7 +36,9 @@ function CartModal({ onClose, onShow, cart, clearCart }) {
       //   throw new Error("failed to place order");
       // }
 
-      const res = await axios.post("http://localhost:5000/orders", orderData);
+      // const res = await axios.post("http://localhost:5000/orders", orderData);
+
+      sendRequest(orderData);
 
       alert("order placed successfully");
       onClose();
@@ -39,6 +47,10 @@ function CartModal({ onClose, onShow, cart, clearCart }) {
       console.log(error.message);
     }
   };
+
+  if (loading) {
+    return<Loading/>
+  }
 
   return (
     <>
