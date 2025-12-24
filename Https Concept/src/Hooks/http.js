@@ -1,13 +1,12 @@
 import axios from "axios";
 import React, { useCallback, useState } from "react";
-import { useAccordionButton } from "react-bootstrap";
 
-const useHttp = () => {
+const useHttp = ({url,method="GET"}) => {
   const [data, setData] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
-  const [error, setError] = useState(nul);
+//   const [error, setError] = useState(nul);
 
   const sendRequest = useCallback(
     async (body = null, config) => {
@@ -36,7 +35,6 @@ const useHttp = () => {
   return {
     data,
     loading,
-    error,
     sendRequest,
   };
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import useHttp from "../Hooks/http";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -13,43 +14,43 @@ import Navbar from "./Navbar";
 import CartModal from "./CartModal";
 
 const Product = () => {
-  const [product, setProduct] = useState([]);
+  // const [product, setProduct] = useState([]);
 
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
 
   const [cart, setCart] = useState([]);
 
   const [showCart, setShowCart] = useState(false);
 
+  const url = "http://localhost:5000/products";
+
+  const { sendRequest, data: product, loading, error } = useHttp({ url });
+
   useEffect(() => {
     const productData = async () => {
-      try {
-        setLoading(true);
+      // try {
+      //   setLoading(true);
+      //   const res = await axios("http://localhost:5000/products");
+      //   const data = res.data;
+      //   if (data.length <= 0) {
+      //     setError("no data found");
+      //   }
+      //   setProduct(data);
+      // } catch (error) {
+      //   console.log(error);
+      //   if (error.status === 404) {
+      //     setError("invalid url");
+      //   } else {
+      //     setError(error.message);
+      //   }
+      // } finally {
+      //   setLoading(false);
+      // }
 
-        const res = await axios("http://localhost:5000/products");
-
-        const data = res.data;
-
-        if (data.length <= 0) {
-          setError("no data found");
-        }
-
-        setProduct(data);
-      } catch (error) {
-        console.log(error);
-
-        if (error.status === 404) {
-          setError("invalid url");
-        } else {
-          setError(error.message);
-        }
-      } finally {
-        setLoading(false);
-      }
+      sendRequest();
     };
-
     productData();
   }, []);
 
