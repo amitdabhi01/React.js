@@ -26,7 +26,7 @@ const Product = () => {
 
   const url = "http://localhost:5000/products";
 
-  const { sendRequest, data: product, loading, error } = useHttp({ url });
+  const { sendRequest, data: product, loading, error } = useHttp();
 
   useEffect(() => {
     const productData = async () => {
@@ -49,7 +49,10 @@ const Product = () => {
       //   setLoading(false);
       // }
 
-      sendRequest();
+      sendRequest({
+        url,
+        method: "GET",
+      });
     };
     productData();
   }, []);

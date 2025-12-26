@@ -1,25 +1,35 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import useHttp from "../Hooks/http";
+
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
 
 const Order = ({ onHide, onShow }) => {
-  const [order, setOrder] = useState([]);
+  // const [order, setOrder] = useState([]);
+
+  const { sendRequest, data: order, loading, error } = useHttp();
 
   useEffect(() => {
     const handleOrderData = async () => {
-      try {
-        const res = await axios("http://localhost:5000/orders");
+      // try {
+      //   const res = await axios("http://localhost:5000/orders");
 
-        const data = res.data;
+      //   const data = res.data;
 
-        setOrder(data);
+      //   setOrder(data);
 
-        // console.log(data);
-      } catch (error) {
-        console.log(error.message);
-      }
+      //   // console.log(data);
+      // } catch (error) {
+      //   console.log(error.message);
+      // }
+
+      sendRequest({
+        url: "http://localhost:5000/orders",
+        method: "GET",
+      });
     };
 
     handleOrderData();
@@ -53,7 +63,7 @@ const Order = ({ onHide, onShow }) => {
 
   const handleOrderStatus = async (id, status) => {
     try {
-      await axios.patch(`http://localhost:5000/orders/${id}`, { status,});
+      await axios.patch(`http://localhost:5000/orders/${id}`, { status });
 
       setOrder((prevOrder) =>
         prevOrder.map((prod) => (prod.id === id ? { ...prod, status } : prod))

@@ -10,7 +10,7 @@ import Image from "react-bootstrap/Image";
 function CartModal({ onClose, onShow, cart, clearCart }) {
   const url = "http://localhost:5000/orders";
 
-  const { sendRequest, loading } = useHttp({ url, method: "POST" });
+  const { sendRequest, loading } = useHttp();
 
   const totalAmount = cart.reduce((acc, curr) => {
     return (acc += curr.price * curr.quantity);
@@ -38,7 +38,11 @@ function CartModal({ onClose, onShow, cart, clearCart }) {
 
       // const res = await axios.post("http://localhost:5000/orders", orderData);
 
-      sendRequest(orderData);
+      sendRequest({
+        url,
+        method: "POST",
+        body: orderData,
+      });
 
       alert("order placed successfully");
       onClose();
@@ -49,7 +53,7 @@ function CartModal({ onClose, onShow, cart, clearCart }) {
   };
 
   if (loading) {
-    return<Loading/>
+    return <Loading />;
   }
 
   return (
