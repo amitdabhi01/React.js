@@ -2,15 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useHttp from "../Hooks/http";
 
-
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
+import ListGroup from "react-bootstrap/ListGroup";
 
 const Order = ({ onHide, onShow }) => {
-  // const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState([]);
 
-  const { sendRequest, data: order, loading, error } = useHttp();
+  const { sendRequest, data } = useHttp();
 
   useEffect(() => {
     const handleOrderData = async () => {
@@ -34,6 +34,12 @@ const Order = ({ onHide, onShow }) => {
 
     handleOrderData();
   }, []);
+
+  useEffect(() => {
+    if (data && data.length > 0) {
+      setOrder(data);
+    }
+  }, [data]);
 
   // const handleOrderStatus = async (id, status) => {
   //   try {
@@ -63,7 +69,13 @@ const Order = ({ onHide, onShow }) => {
 
   const handleOrderStatus = async (id, status) => {
     try {
-      await axios.patch(`http://localhost:5000/orders/${id}`, { status });
+      // await axios.patch(`http://localhost:5000/orders/${id}`, { status });
+
+      sendRequest({
+        url: `http://localhost:5000/orders/${id}`,
+        method: "PATCH",
+        body: { status },
+      });
 
       setOrder((prevOrder) =>
         prevOrder.map((prod) => (prod.id === id ? { ...prod, status } : prod))
@@ -77,7 +89,12 @@ const Order = ({ onHide, onShow }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/orders/${id}`);
+      // await axios.delete(`http://localhost:5000/orders/${id}`);
+
+      sendRequest({
+        url: `http://localhost:5000/orders/${id}`,
+        method: "DELETE",
+      });
 
       setOrder((prevOrder) => prevOrder.filter((ord) => ord.id !== id));
 
@@ -85,6 +102,7 @@ const Order = ({ onHide, onShow }) => {
     } catch (error) {
       console.log(error.message);
     }
+    onHide();
   };
 
   return (
@@ -123,14 +141,16 @@ const Order = ({ onHide, onShow }) => {
                   <tr key={ord.id}>
                     <td>{ord.id}</td>
                     <td>
-                      {ord.cart.map((item, index) => (
-                        <ul key={index}>
-                          <li>{item.name}</li>
-                          <small>
-                            {item.quantity} ✖️ ₹{item.price}
-                          </small>
-                        </ul>
-                      ))}
+                      <ListGroup variant="flush">
+                        {(ord.cart || []).map((item, i) => (
+                          <ListGroup.Item key={i}>
+                            <div className="fw-semibold">{item.name}</div>
+                            <small className="text-muted">
+                              Qty: {item.qty} × ₹{item.price}
+                            </small>
+                          </ListGroup.Item>
+                        ))}
+                      </ListGroup>
                     </td>
                     <td>{ord.status}</td>
                     <td>{new Date(ord.createdAt).toLocaleString()}</td>
