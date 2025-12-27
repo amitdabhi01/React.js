@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
-const ReviewForm = ({addData}) => {
+const ReviewForm = ({data}) => {
   const [input, setInput] = useState({
     name: "",
     description: "",
@@ -21,21 +21,21 @@ const ReviewForm = ({addData}) => {
 
   const handleSubmitData = (e) => {
     e.preventDefault();
-    addData(input)
+    // console.log(input);
+    data(input);
     setInput({ name: "", description: "", rate: "" });
   };
-
   return (
     <>
-      <Container className="border mt-5 p-5">
-        <Form onClick={handleSubmitData}>
+      <Container className="border mt-5 p-5 mb-5">
+        <Form onSubmit={handleSubmitData}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Your Name</Form.Label>
             <Form.Control
               className="w-50"
               type="text"
               placeholder="Enter Your Name"
-              onChange={(i) => handleInputData(e, "name")}
+              onChange={(e) => handleInputData("name", e)}
               value={input.name}
             />
           </Form.Group>
@@ -45,20 +45,23 @@ const ReviewForm = ({addData}) => {
               as="textarea"
               className="w-50"
               rows={3}
-              onChange={(i) => handleInputData(e, "description")}
+              onChange={(e) => handleInputData("description", e)}
               value={input.description}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Rating</Form.Label>
-            <Form.Control
-              className="w-50"
-              type="number"
-              placeholder="Give Rating"
-              onChange={(i) => handleInputData(e, "rate")}
-              value={input.rate}
-            />
-          </Form.Group>
+          <Form.Select
+            aria-label="Default select example"
+            value={input.rate}
+            onChange={(e) => handleInputData("rate", e)}
+            className="w-50 mb-3"
+          >
+            <option>Select Rating</option>
+            <option value="⭐">1</option>
+            <option value="⭐⭐">2</option>
+            <option value="⭐⭐⭐">3</option>
+            <option value="⭐⭐⭐⭐">4</option>
+            <option value="5⭐⭐⭐⭐⭐">5</option>
+          </Form.Select>
           <Button type="submit">Submit</Button>
         </Form>
       </Container>

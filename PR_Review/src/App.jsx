@@ -1,12 +1,10 @@
 import React from "react";
-import ReviewForm from "./Components/ReviewForm";
-import ReviewList from "./Components/ReviewList";
+import ReviewContainer from "./Components/ReviewContainer";
 
 const App = () => {
   return (
     <>
-      <ReviewForm addData={addData}/>
-      <ReviewList/>
+      <ReviewContainer/>
     </>
   );
 };
