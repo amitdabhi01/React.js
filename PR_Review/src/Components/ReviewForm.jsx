@@ -32,7 +32,7 @@ const ReviewForm = ({data}) => {
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Your Name</Form.Label>
             <Form.Control
-              className="w-50"
+              className="w-100"
               type="text"
               placeholder="Enter Your Name"
               onChange={(e) => handleInputData("name", e)}
@@ -43,7 +43,7 @@ const ReviewForm = ({data}) => {
             <Form.Label>Description</Form.Label>
             <Form.Control
               as="textarea"
-              className="w-50"
+              className="w-100"
               rows={3}
               onChange={(e) => handleInputData("description", e)}
               value={input.description}
@@ -53,7 +53,7 @@ const ReviewForm = ({data}) => {
             aria-label="Default select example"
             value={input.rate}
             onChange={(e) => handleInputData("rate", e)}
-            className="w-50 mb-3"
+            className="w-100 mb-3"
           >
             <option>Select Rating</option>
             <option value="⭐">1</option>
@@ -62,7 +62,7 @@ const ReviewForm = ({data}) => {
             <option value="⭐⭐⭐⭐">4</option>
             <option value="5⭐⭐⭐⭐⭐">5</option>
           </Form.Select>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" className="w-100">Submit</Button>
         </Form>
       </Container>
     </>

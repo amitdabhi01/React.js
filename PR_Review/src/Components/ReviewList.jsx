@@ -11,7 +11,7 @@ const ReviewList = ({ listData }) => {
           listData.map((item) => {
             return (
               <>
-                <div className="w-100 border p-3">
+                <div className="w-100 border p-4">
                   <h5 className="fw-bold">Name: {item.name}</h5>
                   <p className="fw-bold">Description: {item.description}</p>
                   <p className="fw-bold">Rating: {item.rate}</p>
