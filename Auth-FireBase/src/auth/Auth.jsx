@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,7 +7,8 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-import { auth } from "../firebase/config";
+import { auth } from "../../config";
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -60,6 +62,10 @@ const Auth = () => {
     }
   };
 
+  const googleProvider = async () => {
+    
+  }
+
   return (
     <>
       <Container>
@@ -91,12 +97,22 @@ const Auth = () => {
                   ></Form.Control>
                 </Form.Group>
 
-                <Button className="btn btn-primary btn-success" type="submit">
+                <Button
+                  className="btn btn-primary btn-success mb-3"
+                  type="submit"
+                  disabled={loading}
+                >
                   {isLogin ? "login" : "sign up"}
                 </Button>
+
+                <Button disabled={loading} onClick={googleProvider}>
+                  Login With Google
+                </Button>
+
                 <Button
                   className="btn btn-primary mt-3"
                   onClick={() => setIsLogin(!isLogin)}
+                  disabled={loading}
                 >
                   {isLogin ? "New User ? Sign Up" : "Already User ? Login"}
                 </Button>
